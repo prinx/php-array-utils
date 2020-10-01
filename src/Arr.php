@@ -12,19 +12,19 @@
 namespace Prinx;
 
 /**
- * Array Utilities class
+ * Array Utilities class.
  *
  * @author Prince Dorcis <princedorcis@gmail.com>
  */
 class Arr
 {
-
     /**
-     * Get a deep value from a recursive array
+     * Get a deep value from a recursive array.
      *
-     * @param string $key The key follows the depth of the array to retrieve.
-     * @param array $array The array the value will be got from
-     * @param string $sep The key will be exploded according to the separator. The separator marks each time a new depth in the array
+     * @param string $key   The key follows the depth of the array to retrieve.
+     * @param array  $array The array the value will be got from
+     * @param string $sep   The key will be exploded according to the separator. The separator marks each time a new depth in the array
+     *
      * @return mixed
      */
     public static function multiKeyGet($key, $array, $sep = '.')
@@ -48,11 +48,12 @@ class Arr
     }
 
     /**
-     * Remove a deep value from a recursive array
+     * Remove a deep value from a recursive array.
      *
-     * @param string $key The key follows the depth of the array.
-     * @param array $array The array the value will be removed from
-     * @param string $sep The key will be exploded according to the separator. The separator marks each time a new depth in the array
+     * @param string $key   The key follows the depth of the array.
+     * @param array  $array The array the value will be removed from
+     * @param string $sep   The key will be exploded according to the separator. The separator marks each time a new depth in the array
+     *
      * @return array The modified array
      */
     public static function multiKeyRemove($key, $array, $sep = '.')
@@ -76,12 +77,13 @@ class Arr
     }
 
     /**
-     * Set a deep value from in a recursive array
+     * Set a deep value from in a recursive array.
      *
-     * @param string $key The key follows the depth of the array to retrieve.
-     * @param mixed $value The value to set
-     * @param array $array The array in which to set the value
-     * @param string $sep The key will be exploded according to the separator. The separator marks each time a new depth in the array
+     * @param string $key   The key follows the depth of the array to retrieve.
+     * @param mixed  $value The value to set
+     * @param array  $array The array in which to set the value
+     * @param string $sep   The key will be exploded according to the separator. The separator marks each time a new depth in the array
+     *
      * @return array The modified array
      */
     public static function multiKeySet($key, $value, $array, $sep = '.')
@@ -91,6 +93,7 @@ class Arr
 
         if (1 === $depth) {
             $array[$key] = $value;
+
             return $array;
         }
 
@@ -98,7 +101,7 @@ class Arr
             $exploded[$depth - 1] => $value,
         ];
 
-        for ($i = $depth - 2; $i >= 0; --$i) {
+        for ($i = $depth - 2; $i >= 0; $i--) {
             $toAdd = [
                 $exploded[$i] => $toAdd,
             ];

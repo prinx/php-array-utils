@@ -14,19 +14,19 @@ class EnvTest extends TestCase
     {
         $configArray = [
             'default' => [
-                'driver' => 'mysql',
-                'host' => 'localhost',
-                'user' => 'root',
+                'driver'   => 'mysql',
+                'host'     => 'localhost',
+                'user'     => 'root',
                 'password' => '',
-                'dbname' => 'test',
+                'dbname'   => 'test',
             ],
 
             'production' => [
-                'driver' => 'mysql',
-                'host' => 'localhost',
-                'user' => 'root',
+                'driver'   => 'mysql',
+                'host'     => 'localhost',
+                'user'     => 'root',
                 'password' => '',
-                'dbname' => 'production',
+                'dbname'   => 'production',
             ],
         ];
 
